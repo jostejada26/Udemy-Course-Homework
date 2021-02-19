@@ -1,0 +1,33 @@
+from random import randint
+
+rps = ["rock", "paper", "scissors"]
+
+computer = rps[randint(0,2)].lower()
+
+player = False
+
+while player == False:
+    player = input("rock, paper, scissors? ").lower()
+    print("Computer chose " + computer)
+    if player == computer:
+        print("Tie!" + "\n")
+    elif player == "rock":
+        if computer == "paper":
+            print("You lose! " + computer + " covers " + player + "\n")
+        else:
+            print("You win! " + player + " smashes " + computer + "\n")
+    elif player == "paper":
+        if computer == "rock":
+            print("You win! " + player + " covers " + computer + "\n")
+        else:
+            print("You lose! " + computer + " cuts " + player + "\n")
+    elif player == "scissors":
+        if computer == "paper":
+            print("You win! " + player + " cuts " + computer + "\n")
+        else:
+            print("You lose! " + computer + " smashes " + player + "\n")
+    else:
+        print("Invalid input, try again." + "\n")
+    player = False
+    #computer chooses random choice from rock paper scissors
+    computer = rps[randint(0,2)].lower()
